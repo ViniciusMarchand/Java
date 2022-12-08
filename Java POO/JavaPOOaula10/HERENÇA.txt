@@ -1,0 +1,3 @@
+PERMITE BASEAR UMA NOVA CLASSE NA DEFINIÇÃO DE UMA OUTRA CLASSE PREVIAMENTE EXISTENTE
+A herança será aplicada tanto para características quanto para comportamentos
+
