@@ -1,0 +1,10 @@
+===========================POLIMORFISMO==============================
+Permite que um mesmo nome represente vários comportamentos diferentes
+
+***Assinatura do Método***
+Quantidade e tipos dos parâmetros
+
+***Tipos de polimoefismo***
+1- Sobreposição
+    Acontece quando substituimos um metodo de uma superclasse na sua  subclasse, usando a mesma assinatura.
+2- Sobrecarga
