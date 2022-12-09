@@ -1,0 +1,8 @@
+===CLASSE ABSTRATA===
+Não pode ser instanciada, só pode servir como progenitora.
+===MÉTODO ABSTRATO===
+Declarado, mas não implementado na progenitora.
+===CLASSE FINAL===
+Não pode ser herdada por outra calsse. Obrigatoriamente folha.
+===MÉTODO FINAL===
+Não pode ser dobrescrito pelas suas subclasses. Obrigatoriamente herdado.
