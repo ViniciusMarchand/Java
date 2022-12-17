@@ -8,4 +8,6 @@ Quantidade e tipos dos parâmetros
 1- Sobreposição
     Acontece quando substituimos um metodo de uma superclasse na sua  subclasse, usando a mesma assinatura.
 2- Sobrecarga
+    Assinaturas diferentes. Mesma Classe.
+
     
