@@ -16,8 +16,8 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         nave = new Nave();
         tiros = new ArrayList<Tiro>();
         inimigos = new ArrayList<Inimigo>();
-        for (int i = 0; i < 30; i++) {
-            inimigos.add(new Inimigo(50 + 100 * i, 50 + 50* (i % 10)));
+        for (int i = 0; i < 60; i++) {
+            inimigos.add(new Inimigo(50 + i%20 * 50, 50 + 50 + i/20 * 50, 1));
         }
         Thread lacoDoJogo = new Thread(this);
         lacoDoJogo.start();
@@ -43,6 +43,14 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
             if (tiros.get(i).destroy()) {
                 tiros.remove(i);
                 i--;
+            }
+        }
+        for (int i= 0; i <inimigos.size();i++){
+            if(inimigos.get(i).getX() == 0 || inimigos.get(i).getX() == 1366 -50){
+                for (int j= 0; j <inimigos.size();j++){
+                    inimigos.get(j).trocaDirecao();
+                }
+                break;
             }
         }
     }
