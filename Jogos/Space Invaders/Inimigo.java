@@ -1,4 +1,4 @@
-import java.awt.Color;
+
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -20,22 +20,25 @@ public class Inimigo {
             e.printStackTrace();
         }
         this.x = inicioX;
-        this.y = InicioY;
-        this.velocidade = 5;
+        this.y = InicioY -100;
+        this.velocidade = 2;
         this.direcao = direcao;
         
        
     } 
-    public void trocaDirecao(){
-        direcao = direcao *-1;
-    }
+
     public void atualizar(){
         x += velocidade * direcao;
     }
+    public void trocaDirecao(){
+        direcao = direcao *-1;
+        y+=100;
+    }
+    
     public void pintar(Graphics2D g){
         g.drawImage(desenho, x,y,x + 100,y + 100,0,0,desenho.getWidth(), desenho.getHeight(), null);
     }
     public int getX(){
-         return x;
+        return x;
     }
 }
