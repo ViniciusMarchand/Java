@@ -47,6 +47,6 @@ public class Inimigo {
         return y;
     }
     public int getTam(){
-        return 50;
+        return 100;
     }
 }

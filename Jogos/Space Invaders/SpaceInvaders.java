@@ -1,23 +1,33 @@
 import javax.swing.JPanel;
+import java.awt.Color;
+import javafx.scene.text.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Random;
+
+
+
 
 public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
+   
     private Nave nave;
     private int direcao;
+    private boolean ganhou;
     private ArrayList<Tiro> tiros;
     private ArrayList<Inimigo> inimigos;
+    private PlanoDeFundo planoDeFundo;
 
     public SpaceInvaders() {
         nave = new Nave();
+        planoDeFundo = new PlanoDeFundo();
         tiros = new ArrayList<Tiro>();
         inimigos = new ArrayList<Inimigo>();
         for (int i = 0; i < 60; i++) {
-            inimigos.add(new Inimigo(50 + i % 20 * 50, 100 + 60 + i / 20 * 50, 1));
+            inimigos.add(new Inimigo(60 + i % 20 * 50, 100 + 60 + i / 20 * 50, 1));
         }
         Thread lacoDoJogo = new Thread(this);
         lacoDoJogo.start();
@@ -35,6 +45,9 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
 
     private void update() {
         nave.movimentar(direcao);
+        if(inimigos.size() == 0){
+            System.out.println("ganhou");
+        }
         for (int i = 0; i < inimigos.size(); i++) {
             inimigos.get(i).atualizar();
         }
@@ -68,7 +81,7 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
 
     public void paintComponent(Graphics g2) {
         super.paintComponent(g2);
-
+    
         Graphics2D g = (Graphics2D) g2.create();
         g.setRenderingHint(
                 RenderingHints.KEY_ANTIALIASING,
@@ -76,7 +89,10 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         g.setRenderingHint(
                 RenderingHints.KEY_TEXT_ANTIALIASING,
                 RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-
+        planoDeFundo.pintar(g);
+        Estrelas estrelas = new Estrelas(new Random().nextInt(1600),new  Random().nextInt(700));
+        estrelas.pintar(g);
+        estrelas.pintar(g);
         for (int i = 0; i < inimigos.size(); i++) {
             inimigos.get(i).pintar(g);
         }
@@ -85,8 +101,11 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         for (int i = 0; i < tiros.size(); i++) {
             tiros.get(i).pintar(g);
         }
+        if(ganhou){
+            //fazendo..........................................
+        }
     }
-
+    
     private void dorme() {
         try {
             Thread.sleep(20);
