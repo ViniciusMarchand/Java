@@ -43,13 +43,14 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
             if (tiros.get(i).destroy()) {
                 tiros.remove(i);
                 i--;
-            }
-            for(int j = 0; j<inimigos.size();j++){
-                if(tiros.get(i).colideCom(inimigos.get(j))){
-                    inimigos.remove(j);
-                    j--;
-                    tiros.remove(i);
-                    break;
+            } else {
+                for (int j = 0; j < inimigos.size(); j++) {
+                    if (tiros.get(i).colideCom(inimigos.get(j))) {
+                        inimigos.remove(j);
+                        j--;
+                        tiros.remove(i);
+                        break;
+                    }
                 }
             }
         }
