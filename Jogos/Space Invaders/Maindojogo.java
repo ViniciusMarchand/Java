@@ -7,12 +7,12 @@ public class Maindojogo {
         janela.setLayout(null);
         janela.setLocationRelativeTo(null);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        SpaceInvaders invasaoAlienigina =  new SpaceInvaders();
-        invasaoAlienigina.setBounds(0,0,1366,768);
+        SpaceInvaders invasaoAlienigina = new SpaceInvaders();
+        invasaoAlienigina.setBounds(0, 0, 1366, 768);
         janela.add(invasaoAlienigina);
         janela.addKeyListener(invasaoAlienigina);
         janela.setVisible(true);
 
     }
-    
+
 }
