@@ -19,12 +19,10 @@ public class Nave {
             System.out.println("Não foi possível carregar a imagem.");
             e.printStackTrace();
         }
-
         x = 683;
         velocidade = 10;
         podeAtirar = true;
         tempo = 0;
-
     }
 
     public void pintar(Graphics2D g) {

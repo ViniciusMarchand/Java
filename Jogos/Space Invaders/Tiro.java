@@ -18,7 +18,6 @@ public class Tiro {
         g.setColor(Color.red);
         g.fillRect(x, y, tamX, tamY);
     }
-
     public void atualiza() {
         y -= velocidade;
     }

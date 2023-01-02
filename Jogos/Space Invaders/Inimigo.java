@@ -12,7 +12,6 @@ public class Inimigo {
     private int y;
     private int velocidade;
     private int direcao;
-
     public Inimigo(int inicioX, int InicioY, int direcao) {
         try {
             desenho = ImageIO.read(new File("imagens/inimigo.png"));

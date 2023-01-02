@@ -11,7 +11,6 @@ import java.util.Random;
 
 
 
-
 public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
    
     private Nave nave;

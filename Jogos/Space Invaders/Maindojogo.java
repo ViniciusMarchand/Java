@@ -14,7 +14,6 @@ public class Maindojogo {
         janela.add(invasaoAlienigina);
         janela.addKeyListener(invasaoAlienigina);
         janela.setVisible(true);
-
     }
 
 }

@@ -15,7 +15,6 @@ public class PlanoDeFundo {
         }
         
     }
-
     public void pintar(Graphics2D g) {
         g.drawImage(imagem, 0, y-768*2,imagem.getWidth(), imagem.getHeight(), null);
         g.drawImage(imagem, 0, y,imagem.getWidth(), -imagem.getHeight(), null);
