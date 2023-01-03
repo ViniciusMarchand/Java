@@ -52,4 +52,5 @@ public class Nave {
     public boolean podeAtirar() {
         return podeAtirar;
     }
+
 }

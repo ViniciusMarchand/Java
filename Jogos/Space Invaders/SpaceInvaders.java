@@ -31,7 +31,6 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         Thread lacoDoJogo = new Thread(this);
         lacoDoJogo.start();
     }
-
     @Override
     public void run() {
         while (true) {
@@ -39,7 +38,6 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
             repaint();
             dorme();
         }
-
     }
 
     private void update() {
@@ -63,6 +61,7 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
                 }
             }
         }
+
         for (int i = 0; i < inimigos.size(); i++) {
             if (inimigos.get(i).getX() <= 0 || inimigos.get(i).getX() >= 1330 - 100) {
                 for (int j = 0; j < inimigos.size(); j++) {
