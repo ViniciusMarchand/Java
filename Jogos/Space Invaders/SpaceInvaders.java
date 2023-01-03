@@ -1,4 +1,6 @@
 import javax.swing.JPanel;
+
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -6,14 +8,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Random;
+import java.awt.Color;
 
 
 
 public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
-   
+    Font minhaFont = new Font("serif", Font.BOLD, 20);
     private Nave nave;
     private int direcao;
-    private boolean ganhou;
     private ArrayList<Tiro> tiros;
     private ArrayList<Inimigo> inimigos;
     private PlanoDeFundo planoDeFundo;
@@ -42,9 +44,6 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
 
     private void update() {
         nave.movimentar(direcao);
-        if(inimigos.size() == 0){
-            System.out.println("ganhou");
-        }
         for (int i = 0; i < inimigos.size(); i++) {
             inimigos.get(i).atualizar();
         }
@@ -93,14 +92,16 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         for (int i = 0; i < inimigos.size(); i++) {
             inimigos.get(i).pintar(g);
         }
-
         nave.pintar(g);
         for (int i = 0; i < tiros.size(); i++) {
             tiros.get(i).pintar(g);
         }
-        if(ganhou){
-            //fazendo..........................................
+        if(inimigos.size() == 0){
+            g.setColor(Color.white);
+            g.setFont(minhaFont);
+            g.drawString("VOCÊ GANHOU!!!", 1366/2-54, 700/2); 
         }
+
     }
     
     private void dorme() {
