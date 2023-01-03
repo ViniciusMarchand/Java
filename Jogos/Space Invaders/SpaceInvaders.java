@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.awt.Color;
 
-
-
 public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
     private Font minhaFont = new Font("serif", Font.BOLD, 20);
     private Nave nave;
@@ -20,11 +18,13 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
     private ArrayList<Inimigo> inimigos;
     private PlanoDeFundo planoDeFundo;
 
+
     public SpaceInvaders() {
         nave = new Nave();
         planoDeFundo = new PlanoDeFundo();
         tiros = new ArrayList<Tiro>();
         inimigos = new ArrayList<Inimigo>();
+
         for (int i = 0; i < 60; i++) {
             inimigos.add(new Inimigo(60 + i % 20 * 50, 100 + 60 + i / 20 * 50, 1));
         }
@@ -99,6 +99,12 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
             g.setColor(Color.white);
             g.setFont(minhaFont);
             g.drawString("VOCÊ GANHOU!!!", 1366/2-54, 700/2); 
+        }
+        for(int i= 0; i<inimigos.size();i++)
+        if(inimigos.get(i).getY() >= 550){
+            g.setColor(Color.white);
+            g.setFont(minhaFont);
+            g.drawString("GAME OVER!!!", 1366/2-54, 700/2); 
         }
 
     }
