@@ -13,7 +13,7 @@ import java.awt.Color;
 
 
 public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
-    Font minhaFont = new Font("serif", Font.BOLD, 20);
+    private Font minhaFont = new Font("serif", Font.BOLD, 20);
     private Nave nave;
     private int direcao;
     private ArrayList<Tiro> tiros;

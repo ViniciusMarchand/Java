@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Nave {
 
-    BufferedImage desenho;
+    private BufferedImage desenho;
     private int x;
     private boolean podeAtirar;
     private int tempo;
