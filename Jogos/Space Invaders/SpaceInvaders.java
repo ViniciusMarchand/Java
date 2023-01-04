@@ -99,7 +99,7 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         if(inimigos.size() == 0){
             g.setColor(Color.white);
             g.setFont(minhaFont);
-            g.drawString("VOCÊ GANHOU!!!", 1366/2-60, 700/2); 
+            g.drawString("VOCÊ GANHOU!!!", 1366/2-70, 700/2); 
             fechandoEm--;
             if(fechandoEm <= 0){
                 System.exit(0);
@@ -109,7 +109,7 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         if(inimigos.get(i).getY() >= 550){
             g.setColor(Color.white);
             g.setFont(minhaFont);
-            g.drawString("GAME OVER!!!", 1366/2-54, 700/2); 
+            g.drawString("GAME OVER!!!", 1366/2-70, 700/2); 
             fechandoEm--;
             if(fechandoEm <= 0){
                 System.exit(0);
