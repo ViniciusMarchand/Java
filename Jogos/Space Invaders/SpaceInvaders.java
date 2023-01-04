@@ -17,6 +17,7 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
     private ArrayList<Tiro> tiros;
     private ArrayList<Inimigo> inimigos;
     private PlanoDeFundo planoDeFundo;
+    private int fechandoEm = 150;
 
 
     public SpaceInvaders() {
@@ -98,14 +99,23 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         if(inimigos.size() == 0){
             g.setColor(Color.white);
             g.setFont(minhaFont);
-            g.drawString("VOCÊ GANHOU!!!", 1366/2-54, 700/2); 
+            g.drawString("VOCÊ GANHOU!!!", 1366/2-60, 700/2); 
+            fechandoEm--;
+            if(fechandoEm <= 0){
+                System.exit(0);
+            }
         }
         for(int i= 0; i<inimigos.size();i++)
         if(inimigos.get(i).getY() >= 550){
             g.setColor(Color.white);
             g.setFont(minhaFont);
             g.drawString("GAME OVER!!!", 1366/2-54, 700/2); 
+            fechandoEm--;
+            if(fechandoEm <= 0){
+                System.exit(0);
+            }
         }
+        
 
     }
     
@@ -129,6 +139,10 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_SPACE && nave.podeAtirar()) {
             tiros.add(nave.atirar());
         }
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE && nave.podeAtirar()) {
+            System.exit(0);
+        }
+
     }
 
     @Override
