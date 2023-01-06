@@ -16,12 +16,15 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
     private int direcao;
     private ArrayList<Tiro> tiros;
     private ArrayList<Inimigo> inimigos;
+    private ArrayList<Explosao> explosao;
     private PlanoDeFundo planoDeFundo;
     private int fechandoEm = 150;
 
 
+
     public SpaceInvaders() {
         nave = new Nave();
+
         planoDeFundo = new PlanoDeFundo();
         tiros = new ArrayList<Tiro>();
         inimigos = new ArrayList<Inimigo>();
@@ -127,6 +130,7 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
         }
 
     }
+
 
     @Override
     public void keyPressed(KeyEvent e) {
