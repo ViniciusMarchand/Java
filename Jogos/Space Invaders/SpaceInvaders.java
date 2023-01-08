@@ -16,7 +16,6 @@ public class SpaceInvaders extends JPanel implements Runnable, KeyListener {
     private int direcao;
     private ArrayList<Tiro> tiros;
     private ArrayList<Inimigo> inimigos;
-    private ArrayList<Explosao> explosao;
     private PlanoDeFundo planoDeFundo;
     private int fechandoEm = 150;
 
